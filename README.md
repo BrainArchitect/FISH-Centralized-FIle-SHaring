@@ -50,6 +50,7 @@ Read about arrays, and the API documentation for java.util.Vector, java.util.Lin
 Option:
 Consider sharing files located in subdirectories of shared_file_path.
 Step 2: Client-Server protocol
+==
 Design a protocol with messages for the following interactions:
 
 A client registers at the server by sending a list of shared file names.
@@ -59,6 +60,7 @@ The client unregisters at the server (when the client stops sharing files).
 Option:
 You are free to invent other messages, such as the server telling the client how many files are currently shared, or how many clients are currently registered.
 Step 3: Client File Sharing
+====
 To implement parts of the protocol defined at Step 2, define two methods in Client: 
 - a method share() that registers the client at the server and sends the server a list of shared file names. 
 - a method unshare() that tells the server to remove from the server all names of the files shared by this client and to unregister the client.

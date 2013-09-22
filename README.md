@@ -50,15 +50,20 @@ Read about arrays, and the API documentation for java.util.Vector, java.util.Lin
 Option:
 Consider sharing files located in subdirectories of shared_file_path.
 Step 2: Client-Server protocol
-==
+===
 Design a protocol with messages for the following interactions:
 
 A client registers at the server by sending a list of shared file names.
+
 A client sends to the server a search request for a specific filename.
+
 The server replies to the requesting client by sending either a 'not found' message or addresses of client(s) sharing the requested file.
+
 The client unregisters at the server (when the client stops sharing files).
+
 Option:
 You are free to invent other messages, such as the server telling the client how many files are currently shared, or how many clients are currently registered.
+
 Step 3: Client File Sharing
 ====
 To implement parts of the protocol defined at Step 2, define two methods in Client: 
@@ -71,7 +76,9 @@ Tips:
 
 Read the API documentation for InputStream, InputStreamReader, BufferedReader, OutputStream, OutputStreamWriter, PrintWriter. (See Java SE API documentation)
 Look at Example 3.5: A finger client.
+
 Step 4: Client User Interface and Command Interpreter
+===
 Extend the code of method main() in Client to make it call share(), before starting a simple command line User Interface (UI) that reads user commands and initiates their execution. For each command entered by the user, the UI should output the result of the command or an error message. At this stage, you should just implement a command 'exit', which should make the client call unshare() and stop. This UI will be extended later to support querying the server for shared files.
 
 Tips:
@@ -86,5 +93,5 @@ The design of the directory is an important issue. The directory  should provide
 The server's port number can be specified as a command line argument. If the port was not specified, the Server should use a default port number. The server should keep track of registered clients and available shared files, and should be able to provide this information on a client request.
 
 Step 6: Debug and Run
-
+===
 Start Server and Client, try to share and unshare files with the Client, and optionally to retrieve statistics from the server. Try to run more then one client clients.
